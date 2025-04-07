@@ -1,7 +1,7 @@
 ```markdown
 # AssignmentTracker App 
 
-A simple yet effective web application that helps students track their assignments, deadlines, and submission statuses with ease.
+An effective web application that helps students track their assignments, deadlines, and submission statuses with ease.
 
 ## 👤 Author
 **Nabin Singh**
