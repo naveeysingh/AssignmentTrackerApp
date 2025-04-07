@@ -1,0 +1,25 @@
+<h1 class="mb-4">{{#if assignment._id}}Edit Assignment{{else}}Add New Assignment{{/if}}</h1>
+
+<form method="POST" action="{{#if assignment._id}}/update/{{assignment._id}}{{else}}/add{{/if}}">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Assignment title" value="{{assignment.title}}" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Description / Questions</label>
+    <textarea class="form-control" id="description" name="description" placeholder="Assignment description or questions">{{assignment.description}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="deadline">Deadline</label>
+    <input type="date" class="form-control" id="deadline" name="deadline" value="{{formatDate assignment.deadline}}" required>
+  </div>
+  <div class="form-group">
+    <label for="submissionStatus">Submission Status</label>
+    <select class="form-control" id="submissionStatus" name="submissionStatus">
+      <option value="Pending" {{#if (eq assignment.submissionStatus "Pending")}}selected{{/if}}>Pending</option>
+      <option value="Completed" {{#if (eq assignment.submissionStatus "Completed")}}selected{{/if}}>Completed</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">{{#if assignment._id}}Update Assignment{{else}}Add Assignment{{/if}}</button>
+  <a href="/" class="btn btn-secondary ml-2">Cancel</a>
+</form>

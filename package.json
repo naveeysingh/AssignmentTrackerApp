@@ -1,0 +1,16 @@
+{
+    "name": "AssignmentTrackerApp",
+    "version": "1.0.0",
+    "description": "A Node application using Express, MongoDB/Mongoose, and HBS views for tracking assignments",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "connect-flash": "^0.1.1",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "hbs": "^4.2.0",
+        "mongoose": "^6.10.0"
+    }
+}

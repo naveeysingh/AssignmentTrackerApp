@@ -1,0 +1,39 @@
+<h1 class="mb-4">Assignments List</h1>
+
+<!-- Search Form -->
+<form class="form-inline mb-3" method="GET" action="/">
+  <input class="form-control mr-2" type="text" name="keyword" placeholder="Search assignments" value="{{keyword}}">
+  <button class="btn btn-primary" type="submit">Search</button>
+  <a href="/" class="btn btn-secondary ml-2">Reset</a>
+</form>
+
+<!-- Add New Assignment Button -->
+<a href="/add" class="btn btn-success mb-3">Add New Assignment</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Deadline</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each assignments}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.deadline}}</td>
+        <td>{{this.submissionStatus}}</td>
+        <td>
+          <a href="/edit/{{this._id}}" class="btn btn-sm btn-info">Edit</a>
+          <form action="/delete/{{this._id}}" method="POST" style="display:inline;">
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
